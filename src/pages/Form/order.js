@@ -34,7 +34,7 @@ function OrderPage() {
 
     React.useEffect(() => {
         if (!cookies.token) {
-            router.replace(`${process.env.WEB_URL}`)
+            router.replace(process.env.WEB_URL)
         }
       },[cookies.token])
   
@@ -51,7 +51,7 @@ function OrderPage() {
                 "Authorization": `Bearer ${cookies.token}`
             }
         }).then(function(response) {
-          router.replace(`${process.env.WEB_URL}`)
+          router.replace(process.env.WEB_URL)
           console.log(response)
         }).catch(function(error) {
           console.log(error)
